@@ -1,0 +1,16 @@
+version: 2
+ 
+sources:
+
+- name: DEV_BRONZE
+
+  database: SALES_DEV
+
+  schema: BRONZE
+
+  tables: 
+
+    - name: CUSTOMER_MASTER
+ 
+
+ 
