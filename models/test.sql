@@ -1,1 +1,0 @@
-SELECT * FROM {{source('DEV_BRONZE','CUSTOMER_MASTER')}}

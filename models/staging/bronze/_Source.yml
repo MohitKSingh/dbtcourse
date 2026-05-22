@@ -1,0 +1,20 @@
+version: 2
+ 
+sources:
+
+- name: BRONZE
+
+  database: SALES_DEV
+
+  schema: BRONZE
+
+  tables: 
+
+      - name: country_master
+      - name: customer_master
+      - name: PRODUCT_COUNTRY_AVAILABILITY
+      - name: sales_header
+      - name: sales_item
+
+
+ 

@@ -1,9 +1,0 @@
-sources:
-  - name: bronze
-    database: sales_dev  
-    schema: bronze 
-    tables:
-      - name: country_master
-      - name: customer_master
-      - name: product_availablility
-  
