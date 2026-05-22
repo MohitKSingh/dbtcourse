@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: fact_sales
+    description: Sales fact table at the transaction line grain.
+    columns:
+      - name: TRANSACTION_ID
+        description: Transaction identifier from the sales header.
+        data_tests:
+          - not_null
+
+      - name: TRANSACTION_LINE_ID
+        description: Line identifier within a transaction.
+        data_tests:
+          - not_null
+
+      - name: SKU_CODE
+        description: SKU sold on the transaction line.
+        data_tests:
+          - not_null
+
+      - name: QUANTITY
+        description: Quantity sold on the transaction line.
+        data_tests:
+          - not_null
+
+      - name: UNIT_PRICE
+        description: Unit price captured for the transaction line.
+        data_tests:
+          - not_null
+
+      - name: transaction_line_key
+        description: Composite uniqueness check across transaction and line identifiers.
+        data_tests:
+          - unique_combination_of_columns:
+              arguments:
+                combination_of_columns: ['TRANSACTION_ID', 'TRANSACTION_LINE_ID']
