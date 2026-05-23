@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_bronze__product_availability
+    description: Staging model for product availability by country from the bronze source. Exposes one row per SKU and country with availability status and launch date.
+    columns:
+      - name: COUNTRY_CODE
+        description: Country code where the product availability is tracked.
+
+      - name: SKU_CODE
+        description: Unique SKU identifier for the product.
+
+      - name: IS_AVAILABLE
+        description: Flag indicating whether the SKU is currently available in the country.
+
+      - name: LOCAL_LAUNCH_DATE
+        description: Local market launch date for the SKU in the country.

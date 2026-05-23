@@ -1,0 +1,65 @@
+version: 2
+
+models:
+  - name: fact_sales
+    description: Sales fact table at the transaction line grain.
+    data_tests:
+      - unique:
+          column_name: "concat(TRANSACTION_ID, '-', TRANSACTION_LINE_ID)"
+    columns:
+      - name: TRANSACTION_ID
+        description: Transaction identifier from the sales header.
+        data_tests:
+          - not_null
+
+      - name: TRANSACTION_NUMBER
+        description: Sales transaction number used by the business to reference the sale.
+        data_tests:
+          - not_null
+
+      - name: TRANSACTION_TIMESTAMP
+        description: Date and time when the sales transaction was recorded.
+        data_tests:
+          - not_null
+
+      - name: TRANSACTION_LINE_ID
+        description: Line identifier within a transaction.
+        data_tests:
+          - not_null
+
+      - name: SKU_CODE
+        description: SKU sold on the transaction line.
+        data_tests:
+          - not_null
+
+      - name: QUANTITY
+        description: Quantity sold on the transaction line.
+        data_tests:
+          - not_null
+
+      - name: UNIT_PRICE
+        description: Unit price captured for the transaction line.
+        data_tests:
+          - not_null
+
+      - name: DISCOUNT_AMOUNT
+        description: Discount amount applied to the transaction line.
+
+      - name: TAX_AMOUNT
+        description: Tax amount charged on the transaction line.
+
+      - name: LINE_TOTAL
+        description: Total amount for the transaction line after discounts and taxes.
+        data_tests:
+          - not_null
+
+      - name: CURRENCY
+        description: Currency used for the sales transaction amounts.
+        data_tests:
+          - not_null
+
+      - name: CUSTOMER_SEGMENT
+        description: Customer segment associated with the purchaser.
+
+      - name: COUNTRY_CODE
+        description: Country code associated with the purchaser.
